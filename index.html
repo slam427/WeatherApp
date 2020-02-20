@@ -1,54 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
-
+    <title>WeatherApp</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-
 <body>
-    <header class="bg-dark text-white d-flex justify-content-center pb-20">Weather Dashboard</header>
-    <br>
-    <div class="container m-0">
-        <div class="row">
-            <aside class="col-4" id="leftSideBar">
-                <div class="input-group mb-3">
-                    <div class="input-group-append">
-                        <span class="input-group-text" id="basic-addon1">**</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Search for a City" aria-label="Search"
-                        aria-describedby="basic-addon1">
-                </div>
-            </aside>
-            <main class="col-8">
-                <div class="row" id="mainCity">
-                    <div class="card">
-                        <section class="card-body">
-                            <h3 class="card-title">City & Date</h3>
-                            <h6 class="card-subtitle mb-2 text-muted">temperature</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Humidity</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Wind Speed</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">UV Index</h6>
-                        </section>
-                    </div>
-                </div>
-                <div class="row" id="weeklyForecast">
-                </div>
-            </main>
-
+<div class="container-fluid">
+        <div class="row bg-dark text-white d-flex justify-content-center mb-2">
+        <header>Weather Dashboard</header>
         </div>
 
-
-
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script type="text/javascript" src=js/script.js></script>
-
+    <div class ="row">
+        <div class="col-4" id=leftSideBar>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">**</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Search for a City" aria-label="Search"
+                aria-describedby="basic-addon1">
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+        </div>
+        <div class="col-8">
+            <div class = "row">
+                <div class="col">
+                    <div class="card mw-100">
+                        <div class="card-body">
+                            <h3 class="card-title" id="cityName"></h3>
+                            <h6 class="card-subtitle mb-2 text-muted" id="temperature"></h6>
+                            <h6 class="card-subtitle mb-2 text-muted" id="humidity"></h6>
+                            <h6 class="card-subtitle mb-2 text-muted" id="windSpeed"></h6>
+                            <h6 class="card-subtitle mb-2 text-muted" id="uvIndex"></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id=forecast> 5-Day Forecast:</div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title fiveDayDate">Card title</h5>
+                          <h6 class="card-subtitle mb-2 text-muted fiveDayTemp">Card subtitle</h6>
+                          <h6 class="card-subtitle mb-2 text-muted fiveDayHumidity">Card subtitle</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title fiveDayDate">Card title</h5>
+                          <h6 class="card-subtitle mb-2 text-muted fiveDayTemp">Card subtitle</h6>
+                          <h6 class="card-subtitle mb-2 text-muted fiveDayHumidity">Card subtitle</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title fiveDayDate">Card title</h5>
+                          <h6 class="card-subtitle mb-2 text-muted fiveDayTemp">Card subtitle</h6>
+                          <h6 class="card-subtitle mb-2 text-muted fiveDayHumidity">Card subtitle</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title fiveDayDate">Card title</h5>
+                          <h6 class="card-subtitle mb-2 text-muted fiveDayTemp">Card subtitle</h6>
+                          <h6 class="card-subtitle mb-2 text-muted fiveDayHumidity">Card subtitle</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title fiveDayDate">Card title</h5>
+                          <h6 class="card-subtitle mb-2 text-muted fiveDayTemp">Card subtitle</h6>
+                          <h6 class="card-subtitle mb-2 text-muted fiveDayHumidity">Card subtitle</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript" src=js/script.js></script>
 </body>
-
 </html>
