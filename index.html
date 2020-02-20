@@ -12,24 +12,38 @@
 
 <body>
     <header class="bg-dark text-white d-flex justify-content-center pb-20">Weather Dashboard</header>
-    <div class="container">
+    <br>
+    <div class="container m-0">
         <div class="row">
             <aside class="col-4" id="leftSideBar">
                 <div class="input-group mb-3">
                     <div class="input-group-append">
                         <span class="input-group-text" id="basic-addon1">**</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                    <input type="text" class="form-control" placeholder="Search for a City" aria-label="Search"
                         aria-describedby="basic-addon1">
                 </div>
-                <main class="col-8">
-                    <div class="row" id="mainCity">
-                    </div>
-                    <div class="row" id="weeklyForecast">
-                    </div>
-                </main>
             </aside>
+            <main class="col-8">
+                <div class="row" id="mainCity">
+                    <div class="card">
+                        <section class="card-body">
+                            <h3 class="card-title">City & Date</h3>
+                            <h6 class="card-subtitle mb-2 text-muted">temperature</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">Humidity</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">Wind Speed</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">UV Index</h6>
+                        </section>
+                    </div>
+                </div>
+                <div class="row" id="weeklyForecast">
+                </div>
+            </main>
+
         </div>
+
+
+
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
