@@ -7,32 +7,32 @@ $("#forecast").css({
 });
 
 
-var todayPlusOne = moment().add(1, "days");
-var cityName = "Philadelphia";
-var apiKEY = "f4591ef79b3933364d561e75edeb28da"
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +cityName+ "&appid="+ apiKEY;
-var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKEY;
-var tempArray = [];
-var humidityArray = [];
 
-
-$.ajax({
+$("#searchButton").click(function(event) {
+    event.preventDefault();
+    $("#citySearch").click();
+    var cityName = $("#citySearch").val();
+    var apiKEY = "f4591ef79b3933364d561e75edeb28da"
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +cityName+ "&appid="+ apiKEY;
+    var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKEY;
+    var tempArray = [];
+    var humidityArray = [];
+    var currentDate = moment().format("M/D/YYYY");
+    
+    $.ajax({
     url: queryURL,
     method: "GET"
 })
 
 .then(function(response) {
     console.log("MY api query", response);
-    $("#cityName").text(response.name + " " +moment().format("MMM Do, YYYY"));
+    $("#cityName").text(response.name + " " +currentDate);
     $("#windSpeed").text("Wind Speed: " + response.wind.speed + "MPH");
     $("#humidity").text("Humidity: " + response.main.humidity + "%");
-    let tempF = (response.main.temp - 273.15) * 1.80 + 32;
+    let tempF = Math.floor((response.main.temp - 273.15) * 1.80 + 32);
     
-    $("#temp").text("Temperature" + tempF + "°F");
+    $("#temp").text("Temperature" + " " + tempF + "°F");
 });
-
-
-
 
 $.ajax({
     url: forecastURL,
@@ -72,4 +72,12 @@ $("#fiveDayHumidity4").text("Humidity" + " " +humidityArray[3] + "%");
 $("#fiveDayHumidity5").text("Humidity" + " " +humidityArray[4] + "%");
 console.log("forecast query",response)
 });
+});
+// var today = moment().format("M/D/YYYY");
+// localStorage.setItem()
 
+// $(".forecast1").text(currentDate.add(1, "days"));
+// $(".forecast2").text(currentDate.add(2, "days"));
+// $(".forecast3").text(currentDate.add(3, "days"));
+// $(".forecast4").text(currentDate.add(4, "days"));
+// $(".forecast5").text(currentDate.add(5, "days"));
